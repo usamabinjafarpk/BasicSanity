@@ -1,0 +1,23 @@
+{
+  "name": "url-tester",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "jimp": "^1.6.0",
+    "jszip": "^3.10.1",
+    "next": "14.2.15",
+    "puppeteer": "^23.5.3",
+    "puppeteer-core": "^23.5.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-use-downloader": "^1.2.8",
+    "selenium-webdriver": "^4.25.0"
+  }
+}
