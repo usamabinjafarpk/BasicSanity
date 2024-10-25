@@ -89,14 +89,28 @@ export default async function handler(req, res) {
       const screenshotPath6 = path.join(process.cwd(), 'public', 'screenshot6.png');
       fs.writeFileSync(screenshotPath6, screenshot6, 'base64');
 
+      
 
-      // await driver.findElement(By.id('createMarkersLink')).click();
-      // await driver.findElement(By.id('lnkAddMarker')).click();
 
-      // await driver.sleep(10000); 
-      // await driver.findElement(By.id('txtMarkerSurname')).sendKeys(`TESTMarker${uniqueId}`);
-      // await driver.findElement(By.id('txtMarkerInitials')).sendKeys(`TESTMarker${uniqueId}`);
-      // await driver.findElement(By.id('txtMarkerExternalIdentifier')).sendKeys(`TESTMarker${uniqueId}`);
+      await driver.findElement(By.id('createMarkersLink')).click();
+       await driver.findElement(By.id('lnkAddMarker')).click();
+
+      await driver.sleep(10000); 
+       await driver.findElement(By.id('txtMarkerSurname')).sendKeys(`TESTMarker${uniqueId}`);
+       await driver.findElement(By.id('txtMarkerInitials')).sendKeys(`TESTMarker${uniqueId}`);
+       await driver.findElement(By.id('txtMarkerExternalIdentifier')).sendKeys(`TESTMarker${uniqueId}`);
+
+      await driver.findElement(By.id('ddlMarkerTypes')).click();  // Click dropdown to reveal options
+await driver.sleep(2000); // Optional: wait for options to load
+
+// Locate the dropdown element
+const dropdown = await driver.findElement(By.id('ddlMarkerTypes'));
+
+// Create a Select instance
+const selectElement = new Select(dropdown);
+
+// Select the desired option by visible text
+await selectElement.selectByVisibleText('General Marker');
 
       // await driver.findElement(By.id('ddlMarkerTypes')).click();
       // await driver.sleep(20000); 
@@ -109,13 +123,13 @@ export default async function handler(req, res) {
 
       // await generalMarkerLi.click();
 
-      //       await driver.findElement(By.id('txtMarkerEmail')).sendKeys(`binja@gmail.com`);
+             await driver.findElement(By.id('txtMarkerEmail')).sendKeys(`binja@gmail.com`);
 
-      //       const screenshot7 = await driver.takeScreenshot();
-      //       const screenshotPath7 = path.join(process.cwd(), 'public', 'screenshot7.png');
-      //       fs.writeFileSync(screenshotPath7, screenshot7, 'base64');
+            const screenshot7 = await driver.takeScreenshot();
+           const screenshotPath7 = path.join(process.cwd(), 'public', 'screenshot7.png');
+             fs.writeFileSync(screenshotPath7, screenshot7, 'base64');
 
-      //       await driver.findElement(By.id('btnMarkerSubmit')).click();
+             await driver.findElement(By.id('btnMarkerSubmit')).click();
 
 
 
