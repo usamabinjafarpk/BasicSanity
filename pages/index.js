@@ -12,6 +12,9 @@ export default function Home() {
       <Link href='/adm'>
      <button>ADM</button>
      </Link>
+     <Link href='/assessor'>
+     <button>Assessor</button>
+     </Link>
     </div>
   );
 }
